@@ -14,7 +14,7 @@
 		047264CB266A056A00F5D3F8 /* ECGReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047264C9266A056A00F5D3F8 /* ECGReportViewController.xib */; };
 		047264CD266A066A00F5D3F8 /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047264CC266A066A00F5D3F8 /* Test.plist */; };
 		047264CF266A069C00F5D3F8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047264CE266A069C00F5D3F8 /* ViewController.xib */; };
-		047264D3266A0DF700F5D3F8 /* ECGParamter.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264D2266A0DF700F5D3F8 /* ECGParamter.m */; };
+		047264D3266A0DF700F5D3F8 /* YOECGParamter.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264D2266A0DF700F5D3F8 /* YOECGParamter.m */; };
 		0E5FB22A266919ED007CF6D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB229266919ED007CF6D8 /* AppDelegate.m */; };
 		0E5FB22D266919ED007CF6D8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB22C266919ED007CF6D8 /* SceneDelegate.m */; };
 		0E5FB230266919ED007CF6D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB22F266919ED007CF6D8 /* ViewController.m */; };
@@ -37,8 +37,8 @@
 		047264C9266A056A00F5D3F8 /* ECGReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ECGReportViewController.xib; sourceTree = "<group>"; };
 		047264CC266A066A00F5D3F8 /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
 		047264CE266A069C00F5D3F8 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		047264D1266A0DF700F5D3F8 /* ECGParamter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECGParamter.h; sourceTree = "<group>"; };
-		047264D2266A0DF700F5D3F8 /* ECGParamter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECGParamter.m; sourceTree = "<group>"; };
+		047264D1266A0DF700F5D3F8 /* YOECGParamter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOECGParamter.h; sourceTree = "<group>"; };
+		047264D2266A0DF700F5D3F8 /* YOECGParamter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOECGParamter.m; sourceTree = "<group>"; };
 		0E5FB225266919ED007CF6D8 /* ECGChartView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECGChartView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5FB228266919ED007CF6D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E5FB229266919ED007CF6D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -117,8 +117,8 @@
 		047264D0266A0DBB00F5D3F8 /* ECGParameter */ = {
 			isa = PBXGroup;
 			children = (
-				047264D1266A0DF700F5D3F8 /* ECGParamter.h */,
-				047264D2266A0DF700F5D3F8 /* ECGParamter.m */,
+				047264D1266A0DF700F5D3F8 /* YOECGParamter.h */,
+				047264D2266A0DF700F5D3F8 /* YOECGParamter.m */,
 			);
 			path = ECGParameter;
 			sourceTree = "<group>";
@@ -234,7 +234,7 @@
 			files = (
 				047264BB2669CBCE00F5D3F8 /* YOECGChartView.m in Sources */,
 				0E5FB230266919ED007CF6D8 /* ViewController.m in Sources */,
-				047264D3266A0DF700F5D3F8 /* ECGParamter.m in Sources */,
+				047264D3266A0DF700F5D3F8 /* YOECGParamter.m in Sources */,
 				0E5FB22A266919ED007CF6D8 /* AppDelegate.m in Sources */,
 				0E5FB23B266919EF007CF6D8 /* main.m in Sources */,
 				047264BF2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m in Sources */,
@@ -384,8 +384,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D63XASFCZU;
+				DEVELOPMENT_TEAM = DK5FP394Z3;
 				INFOPLIST_FILE = ECGChartView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -402,8 +403,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D63XASFCZU;
+				DEVELOPMENT_TEAM = DK5FP394Z3;
 				INFOPLIST_FILE = ECGChartView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

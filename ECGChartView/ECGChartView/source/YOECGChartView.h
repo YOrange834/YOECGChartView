@@ -6,14 +6,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ECGParamter.h"
+#import "YOECGParamter.h"
+#import "YOECGLineView.h"
+#import "YOECGBackGroundGridView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YOECGChartView : UIView
 
 
-@property (nonatomic) ECGParamter *standard;
+@property (nonatomic) YOECGParamter *standard;
+
+@property (strong, nonatomic) YOECGBackGroundGridView *gridView;
+
+@property (strong, nonatomic) YOECGLineView *ecgView;
+
 
 /*
  查阅大量资料，心电图一般是7大格子 上面4个走正电压 下面3个走负电压
@@ -32,6 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)drawLine:(NSArray *)voltageArr;
 
+
+-(void)refreshSubViewFrame;
 
 @end
 

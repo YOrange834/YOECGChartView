@@ -6,8 +6,7 @@
 //
 
 #import "YOECGChartView.h"
-#import "YOECGLineView.h"
-#import "YOECGBackGroundGridView.h"
+
 
 @interface YOECGChartView()
 
@@ -16,11 +15,6 @@
 
 /// 纸张规格 10 mV/mm (一小格 10mV)
 @property (nonatomic) int voltageSpecifications;
-
-@property (strong, nonatomic) YOECGBackGroundGridView *gridView;
-
-@property (strong, nonatomic) YOECGLineView *ecgView;
-
 
 @end
 
@@ -36,10 +30,10 @@
 
 
 -(void)configPar{
+    self.standard = [YOECGParamter new];
     
-    
-    self.negativeNum = 13;
-    self.positiveNum = 14;
+    self.negativeNum = 4;
+    self.positiveNum = 4;
     
     self.gridView = [[YOECGBackGroundGridView alloc]initWithFrame:self.bounds];
     [self addSubview:self.gridView];
@@ -52,10 +46,15 @@
 }
 
 
+-(void)refreshSubViewFrame{
+    self.gridView.frame = self.bounds;
+    self.ecgView.frame = self.bounds;
+}
 
 -(void)reloadView{
     self.gridView.gridTotal = self.negativeNum + self.positiveNum;
     self.gridView.oneGradeSize = self.standard.oneGridSize;
+    self.gridView.secodeLineHeight = 2 *self.standard.oneGridSize;
     [self.gridView reloadGrid];
 }
 

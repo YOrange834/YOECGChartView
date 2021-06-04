@@ -34,22 +34,11 @@
     }
     
     /// 1mv的尺寸  一大格 0.5mV
-    float oneVHeight = 0.5 / self.oneGridSize; // pt/mV
+    float oneVHeight = self.standard.onePointHeight; // pt/mV
     /// 中心点的高度 静息状态
-    float centerY = self.positiveNum * self.oneGridSize;
+    float centerY = self.positiveNum * self.standard.oneGridSize;
     
-    
-    ///
-    /**
-     通过采样频率计算出每个点的x宽度
-     每秒采样 self.sampleFrequency 次  ，
-     每个大格子 是 0.25s
-     每秒走 5个大格子,所以没走一次的宽度为 self.oneGradeSize * 5 / self.sampleFrequency;
-     */
-    
-//    float oneSecondeGrid = 1000.0 / self.speed;
-    
-    float xWidth = self.oneGridSize * 5 / self.standard.sampleFrequency;
+    float xWidth = self.standard.onePointWidth;
     
     UIBezierPath *path = [UIBezierPath bezierPath];
     {
@@ -87,48 +76,48 @@
 
 
 
--(void)drawTwoLinwMap:(NSArray *)arr{
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:_beforePoint];
-    if (_beforePoint.x + self.standard.oneGridSize * 2 > self.frame.size.width) { //大于两个点
-        _isStartReduce = YES;
-        
-        for (int i = 0; i < arr.count; i++) {
-            if (_beforePoint.x >= self.frame.size.width){
-
-                CGPoint point = CGPointMake(0, self.frame.size.height / 2.0 - _pointY * [arr[i] intValue]);
-                [path moveToPoint:point];
-                _beforePoint = point;
-                
-            }else{
-                CGPoint point = CGPointMake(_beforePoint.x + _pointX , self.frame.size.height / 2.0 - _pointY * [arr[i] intValue]);
-                [path addLineToPoint:point];
-                _beforePoint = point;
-            }
-                        
-        }
-
-    }else{
-        for (int i = 1; i < arr.count; i++) {
-            CGPoint point = CGPointMake(_beforePoint.x + _pointX , self.frame.size.height / 2.0 - _pointY * [arr[i] intValue]);
-            [path addLineToPoint:point];
-            _beforePoint = point;
-        }
-    }
-    [self.pathArr addObject:path];
-
-    
-    if (_isStartReduce) {
-        [self.pathArr removeObjectAtIndex:0];
-    }
-    
-    UIBezierPath *linePath = [UIBezierPath bezierPath];
-    for (int i = 0; i < self.pathArr.count; i++) {
-        [linePath appendPath:self.pathArr[i]];
-    }
-    _lineLayer.path = linePath.CGPath;
-}
-
+//-(void)drawTwoLinwMap:(NSArray *)arr{
+//    UIBezierPath *path = [UIBezierPath bezierPath];
+//    [path moveToPoint:_beforePoint];
+//    if (_beforePoint.x + self.standard.oneGridSize * 2 > self.frame.size.width) { //大于两个点
+//        _isStartReduce = YES;
+//
+//        for (int i = 0; i < arr.count; i++) {
+//            if (_beforePoint.x >= self.frame.size.width){
+//
+//                CGPoint point = CGPointMake(0, self.frame.size.height / 2.0 - _pointY * [arr[i] intValue]);
+//                [path moveToPoint:point];
+//                _beforePoint = point;
+//
+//            }else{
+//                CGPoint point = CGPointMake(_beforePoint.x + _pointX , self.frame.size.height / 2.0 - _pointY * [arr[i] intValue]);
+//                [path addLineToPoint:point];
+//                _beforePoint = point;
+//            }
+//
+//        }
+//
+//    }else{
+//        for (int i = 1; i < arr.count; i++) {
+//            CGPoint point = CGPointMake(_beforePoint.x + _pointX , self.frame.size.height / 2.0 - _pointY * [arr[i] intValue]);
+//            [path addLineToPoint:point];
+//            _beforePoint = point;
+//        }
+//    }
+//    [self.pathArr addObject:path];
+//
+//
+//    if (_isStartReduce) {
+//        [self.pathArr removeObjectAtIndex:0];
+//    }
+//
+//    UIBezierPath *linePath = [UIBezierPath bezierPath];
+//    for (int i = 0; i < self.pathArr.count; i++) {
+//        [linePath appendPath:self.pathArr[i]];
+//    }
+//    _lineLayer.path = linePath.CGPath;
+//}
+//
 
 
 @end

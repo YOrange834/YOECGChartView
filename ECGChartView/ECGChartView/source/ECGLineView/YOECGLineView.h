@@ -6,12 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ECGParamter.h"
+#import "YOECGParamter.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YOECGLineView : UIView
 
-@property (nonatomic) ECGParamter *standard;
+@property (nonatomic) YOECGParamter *standard;
 
 /*
  查阅大量资料，心电图一般是7大格子 上面4个走正电压 下面3个走负电压

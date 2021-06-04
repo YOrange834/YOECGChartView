@@ -32,7 +32,7 @@
     self.smallGridColor = [UIColor colorWithRed:0xEE / 255.0 green:0xEE / 255.0 blue:0xEE / 255.0 alpha:0.4];
     self.secodeLineHeight = 0;
     self.startSecond = 0;
-    self.textArr = [NSMutableArray array];
+    self.textArr = [NSMutableArray array];    
 }
 
 
@@ -83,16 +83,22 @@
     
     for (int i = 0; i <= column * 5; i++) {  // 竖线
         if (i % 5 == 0) {
-            [bigline moveToPoint:CGPointMake(startX + size * i , 0)];
-            [bigline addLineToPoint:CGPointMake(startX + size * i, height + self.secodeLineHeight)];
-            if (self.isShowSecondText && i < column * 5) {
-                UILabel *lab = [[UILabel alloc]initWithFrame:(CGRectMake(startX + size * i, height, startX + size * (i + 1), self.secodeLineHeight))];
-                lab.text = [NSString stringWithFormat:@"%d",i + self.startSecond];
-                [self configSecondText:lab];
+            if (i % 25 == 0) {
+                [bigline moveToPoint:CGPointMake(startX + size * i , 0)];
+                [bigline addLineToPoint:CGPointMake(startX + size * i, height + self.secodeLineHeight)];
+                if (self.isShowSecondText &&  i < column * 5) {
+                    UILabel *lab = [[UILabel alloc]initWithFrame:(CGRectMake(startX + size * i, height, startX + size * 25 , self.secodeLineHeight))];
+                    lab.text = [NSString stringWithFormat:@"%d",self.startSecond + i / 25];
+                    [self configSecondText:lab];
+                }
+            }else{
+                [bigline moveToPoint:CGPointMake(startX + size * i , 0)];
+                [bigline addLineToPoint:CGPointMake(startX + size * i, height)];
             }
+            
         }else{
-            [smallline moveToPoint:CGPointMake(startX + self.oneGradeSize * i , 0)];
-            [smallline addLineToPoint:CGPointMake(startX + self.oneGradeSize * i, height )];
+            [smallline moveToPoint:CGPointMake(startX + size * i , 0)];
+            [smallline addLineToPoint:CGPointMake(startX + size * i, height )];
         }
     }
 
