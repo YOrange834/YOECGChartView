@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047264BB2669CBCE00F5D3F8 /* YOECGChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264BA2669CBCE00F5D3F8 /* YOECGChartView.m */; };
+		047264BF2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264BE2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m */; };
+		047264C42669FA3F00F5D3F8 /* YOECGLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264C32669FA3F00F5D3F8 /* YOECGLineView.m */; };
+		047264CA266A056A00F5D3F8 /* ECGReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264C8266A056A00F5D3F8 /* ECGReportViewController.m */; };
+		047264CB266A056A00F5D3F8 /* ECGReportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047264C9266A056A00F5D3F8 /* ECGReportViewController.xib */; };
+		047264CD266A066A00F5D3F8 /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047264CC266A066A00F5D3F8 /* Test.plist */; };
+		047264CF266A069C00F5D3F8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047264CE266A069C00F5D3F8 /* ViewController.xib */; };
+		047264D3266A0DF700F5D3F8 /* ECGParamter.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264D2266A0DF700F5D3F8 /* ECGParamter.m */; };
 		0E5FB22A266919ED007CF6D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB229266919ED007CF6D8 /* AppDelegate.m */; };
 		0E5FB22D266919ED007CF6D8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB22C266919ED007CF6D8 /* SceneDelegate.m */; };
 		0E5FB230266919ED007CF6D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB22F266919ED007CF6D8 /* ViewController.m */; };
@@ -17,6 +25,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		047264B92669CBCE00F5D3F8 /* YOECGChartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOECGChartView.h; sourceTree = "<group>"; };
+		047264BA2669CBCE00F5D3F8 /* YOECGChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOECGChartView.m; sourceTree = "<group>"; };
+		047264BD2669D3FB00F5D3F8 /* YOECGBackGroundGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOECGBackGroundGridView.h; sourceTree = "<group>"; };
+		047264BE2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOECGBackGroundGridView.m; sourceTree = "<group>"; };
+		047264C02669E34D00F5D3F8 /* YOECGHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOECGHeader.h; sourceTree = "<group>"; };
+		047264C22669FA3F00F5D3F8 /* YOECGLineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOECGLineView.h; sourceTree = "<group>"; };
+		047264C32669FA3F00F5D3F8 /* YOECGLineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOECGLineView.m; sourceTree = "<group>"; };
+		047264C7266A056A00F5D3F8 /* ECGReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECGReportViewController.h; sourceTree = "<group>"; };
+		047264C8266A056A00F5D3F8 /* ECGReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECGReportViewController.m; sourceTree = "<group>"; };
+		047264C9266A056A00F5D3F8 /* ECGReportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ECGReportViewController.xib; sourceTree = "<group>"; };
+		047264CC266A066A00F5D3F8 /* Test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Test.plist; sourceTree = "<group>"; };
+		047264CE266A069C00F5D3F8 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		047264D1266A0DF700F5D3F8 /* ECGParamter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECGParamter.h; sourceTree = "<group>"; };
+		047264D2266A0DF700F5D3F8 /* ECGParamter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECGParamter.m; sourceTree = "<group>"; };
 		0E5FB225266919ED007CF6D8 /* ECGChartView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECGChartView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5FB228266919ED007CF6D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E5FB229266919ED007CF6D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -42,6 +64,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047264B82669CB9800F5D3F8 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				047264D0266A0DBB00F5D3F8 /* ECGParameter */,
+				047264C12669FA1D00F5D3F8 /* ECGLineView */,
+				047264BC2669D3C700F5D3F8 /* backgrounGrid */,
+				047264B92669CBCE00F5D3F8 /* YOECGChartView.h */,
+				047264BA2669CBCE00F5D3F8 /* YOECGChartView.m */,
+				047264C02669E34D00F5D3F8 /* YOECGHeader.h */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		047264BC2669D3C700F5D3F8 /* backgrounGrid */ = {
+			isa = PBXGroup;
+			children = (
+				047264BD2669D3FB00F5D3F8 /* YOECGBackGroundGridView.h */,
+				047264BE2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m */,
+			);
+			path = backgrounGrid;
+			sourceTree = "<group>";
+		};
+		047264C12669FA1D00F5D3F8 /* ECGLineView */ = {
+			isa = PBXGroup;
+			children = (
+				047264C22669FA3F00F5D3F8 /* YOECGLineView.h */,
+				047264C32669FA3F00F5D3F8 /* YOECGLineView.m */,
+			);
+			path = ECGLineView;
+			sourceTree = "<group>";
+		};
+		047264C5266A054600F5D3F8 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				047264C6266A055100F5D3F8 /* Report */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		047264C6266A055100F5D3F8 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				047264CC266A066A00F5D3F8 /* Test.plist */,
+				047264C7266A056A00F5D3F8 /* ECGReportViewController.h */,
+				047264C8266A056A00F5D3F8 /* ECGReportViewController.m */,
+				047264C9266A056A00F5D3F8 /* ECGReportViewController.xib */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		047264D0266A0DBB00F5D3F8 /* ECGParameter */ = {
+			isa = PBXGroup;
+			children = (
+				047264D1266A0DF700F5D3F8 /* ECGParamter.h */,
+				047264D2266A0DF700F5D3F8 /* ECGParamter.m */,
+			);
+			path = ECGParameter;
+			sourceTree = "<group>";
+		};
 		0E5FB21C266919ED007CF6D8 = {
 			isa = PBXGroup;
 			children = (
@@ -61,12 +142,15 @@
 		0E5FB227266919ED007CF6D8 /* ECGChartView */ = {
 			isa = PBXGroup;
 			children = (
+				047264C5266A054600F5D3F8 /* Demo */,
+				047264B82669CB9800F5D3F8 /* source */,
 				0E5FB228266919ED007CF6D8 /* AppDelegate.h */,
 				0E5FB229266919ED007CF6D8 /* AppDelegate.m */,
 				0E5FB22B266919ED007CF6D8 /* SceneDelegate.h */,
 				0E5FB22C266919ED007CF6D8 /* SceneDelegate.m */,
 				0E5FB22E266919ED007CF6D8 /* ViewController.h */,
 				0E5FB22F266919ED007CF6D8 /* ViewController.m */,
+				047264CE266A069C00F5D3F8 /* ViewController.xib */,
 				0E5FB231266919ED007CF6D8 /* Main.storyboard */,
 				0E5FB234266919EF007CF6D8 /* Assets.xcassets */,
 				0E5FB236266919EF007CF6D8 /* LaunchScreen.storyboard */,
@@ -134,6 +218,9 @@
 			files = (
 				0E5FB238266919EF007CF6D8 /* LaunchScreen.storyboard in Resources */,
 				0E5FB235266919EF007CF6D8 /* Assets.xcassets in Resources */,
+				047264CD266A066A00F5D3F8 /* Test.plist in Resources */,
+				047264CB266A056A00F5D3F8 /* ECGReportViewController.xib in Resources */,
+				047264CF266A069C00F5D3F8 /* ViewController.xib in Resources */,
 				0E5FB233266919ED007CF6D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,9 +232,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047264BB2669CBCE00F5D3F8 /* YOECGChartView.m in Sources */,
 				0E5FB230266919ED007CF6D8 /* ViewController.m in Sources */,
+				047264D3266A0DF700F5D3F8 /* ECGParamter.m in Sources */,
 				0E5FB22A266919ED007CF6D8 /* AppDelegate.m in Sources */,
 				0E5FB23B266919EF007CF6D8 /* main.m in Sources */,
+				047264BF2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m in Sources */,
+				047264C42669FA3F00F5D3F8 /* YOECGLineView.m in Sources */,
+				047264CA266A056A00F5D3F8 /* ECGReportViewController.m in Sources */,
 				0E5FB22D266919ED007CF6D8 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +384,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D63XASFCZU;
 				INFOPLIST_FILE = ECGChartView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,6 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D63XASFCZU;
 				INFOPLIST_FILE = ECGChartView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
