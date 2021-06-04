@@ -46,7 +46,7 @@
     self.ecgView = [[YOECGLineView alloc]initWithFrame:self.bounds];
     
     self.ecgView.standard = self.standard;
-    self.ecgView.oneGridSize = self.standard.oneGridSize;
+    self.ecgView.standard.oneGridSize = self.standard.oneGridSize;
     [self addSubview:self.ecgView];
     
 }
@@ -63,7 +63,7 @@
 -(void)drawLine:(NSArray *)voltageArr{
     self.ecgView.positiveNum = self.positiveNum;
     self.ecgView.negativeNum = self.negativeNum;
-    self.ecgView.oneGridSize = self.standard.oneGridSize;
+    self.ecgView.standard.oneGridSize = self.standard.oneGridSize;
     [self.ecgView drawECGLine:voltageArr];
 }
 
