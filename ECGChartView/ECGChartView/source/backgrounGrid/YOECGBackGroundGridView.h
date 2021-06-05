@@ -7,14 +7,17 @@
 
 #import <UIKit/UIKit.h>
 #import "YOECGHeader.h"
+#import "YOECGParamter.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 背景网格视图
 @interface YOECGBackGroundGridView : UIView
 
+@property (nonatomic) YOECGParamter *standard;
+
 /// 一大格的尺寸(正方形尺寸一样)
-@property (nonatomic) float oneGradeSize;
+//@property (nonatomic) float oneGradeSize;
 
 /// 对齐方式
 @property (nonatomic) YOECGChartViewAlignment showAligment;

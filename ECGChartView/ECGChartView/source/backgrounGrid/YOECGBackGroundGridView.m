@@ -29,7 +29,7 @@
 /// 配置一些默认参数
 -(void)configDefaultPar{
     self.bigGridColor = [UIColor colorWithRed:0x99 / 255.0 green:0x99 / 255.0 blue:0x99 / 255.0 alpha:1];
-    self.smallGridColor = [UIColor colorWithRed:0xEE / 255.0 green:0xEE / 255.0 blue:0xEE / 255.0 alpha:0.4];
+    self.smallGridColor = [UIColor colorWithRed:0xEE / 255.0 green:0xEE / 255.0 blue:0xEE / 255.0 alpha:1.0];
     self.secodeLineHeight = 0;
     self.startSecond = 0;
     self.textArr = [NSMutableArray array];    
@@ -53,14 +53,14 @@
     UIBezierPath *bigline = [UIBezierPath bezierPath];
 
     /// 计算出总的列数
-    int column = self.bounds.size.width / self.oneGradeSize;
+    int column = self.bounds.size.width / self.standard.oneGridSize;
     
     ///网格的高度
-    float height = self.gridTotal * self.oneGradeSize;
+    float height = self.gridTotal * self.standard.oneGridSize;
     /// 网格的宽度
-    float width = column * self.oneGradeSize;
+    float width = column * self.standard.oneGridSize;
     /// 一个小格子的储存
-    float size = self.oneGradeSize / 5;
+    float size = self.standard.oneGridSize / 5;
     
     /// 默认左对齐
     float startX = 0;
@@ -82,23 +82,18 @@
     }
     
     for (int i = 0; i <= column * 5; i++) {  // 竖线
-        if (i % 5 == 0) {
-            if (i % 25 == 0) {
-                [bigline moveToPoint:CGPointMake(startX + size * i , 0)];
-                [bigline addLineToPoint:CGPointMake(startX + size * i, height + self.secodeLineHeight)];
-                if (self.isShowSecondText &&  i < column * 5) {
-                    UILabel *lab = [[UILabel alloc]initWithFrame:(CGRectMake(startX + size * i, height, startX + size * 25 , self.secodeLineHeight))];
-                    lab.text = [NSString stringWithFormat:@"%d",self.startSecond + i / 25];
-                    [self configSecondText:lab];
-                }
-            }else{
-                [bigline moveToPoint:CGPointMake(startX + size * i , 0)];
-                [bigline addLineToPoint:CGPointMake(startX + size * i, height)];
+        if (i % self.standard.speed == 0) {
+            [bigline moveToPoint:CGPointMake(startX + size * i , 0)];
+            [bigline addLineToPoint:CGPointMake(startX + size * i, height + self.secodeLineHeight)];
+            if (self.isShowSecondText &&  i < column * 5) {
+                UILabel *lab = [[UILabel alloc]initWithFrame:(CGRectMake(startX + size * i, height, startX + size * self.standard.speed , self.secodeLineHeight))];
+                lab.text = [NSString stringWithFormat:@"%d",self.startSecond + i / self.standard.speed];
+                [self configSecondText:lab];
             }
-            
         }else{
-            [smallline moveToPoint:CGPointMake(startX + size * i , 0)];
-            [smallline addLineToPoint:CGPointMake(startX + size * i, height )];
+            UIBezierPath *nowPath = i % 5 == 0 ? bigline : smallline;
+            [nowPath moveToPoint:CGPointMake(startX + size * i , 0)];
+            [nowPath addLineToPoint:CGPointMake(startX + size * i, height)];
         }
     }
 

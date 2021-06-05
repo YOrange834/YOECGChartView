@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) YOECGLineView *ecgView;
 
 
+
 /*
  查阅大量资料，心电图一般是7大格子 上面4个走正电压 下面3个走负电压
  */
@@ -35,7 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(void)reloadView;
-
 
 -(void)drawLine:(NSArray *)voltageArr;
 

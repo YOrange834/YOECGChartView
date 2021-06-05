@@ -23,12 +23,14 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [UIColor clearColor];
+        self.voltageUnit = YOECGChartViewVoltageUnitMicroVolt;
     }
     return self;
 }
 
 
--(void)drawECGLine:(NSArray *)voltageArr{
+/// 画静态图
+-(void)drawStaticECGLine:(NSArray *)voltageArr{
     if (voltageArr == 0) {
         return;
     }
@@ -40,14 +42,17 @@
     
     float xWidth = self.standard.onePointWidth;
     
+    /// 目的 将输入的电压转为 mV
+    float voltageRate = 1000 / pow(1000, self.voltageUnit);
+    
     UIBezierPath *path = [UIBezierPath bezierPath];
     {
-        float y = [voltageArr.firstObject intValue] / 1000.0 * oneVHeight;
+        float y = [voltageArr.firstObject intValue] / voltageRate * oneVHeight;
         [path moveToPoint:CGPointMake(0 , centerY - y)];
     }
 
     for (int i = 1; i < voltageArr.count; i++) {
-        float y = [voltageArr[i] intValue] / 1000.0 * oneVHeight;
+        float y = [voltageArr[i] intValue] / voltageRate * oneVHeight;
         CGPoint point = CGPointMake(i * xWidth , centerY - y);
         [path addLineToPoint:point];
     }
@@ -69,12 +74,10 @@
     
 }
 
-///清楚数据
--(void)clearData{
-    [_lineLayer removeFromSuperlayer];
+/// 实时心电图
+-(void)drawRealTimeECGLine:(NSArray *)voltageArr{
+    
 }
-
-
 
 //-(void)drawTwoLinwMap:(NSArray *)arr{
 //    UIBezierPath *path = [UIBezierPath bezierPath];
@@ -118,6 +121,13 @@
 //    _lineLayer.path = linePath.CGPath;
 //}
 //
+
+
+
+///清楚数据
+-(void)clearData{
+    [_lineLayer removeFromSuperlayer];
+}
 
 
 @end

@@ -8,8 +8,11 @@
 #import "ECGReportViewController.h"
 #import "YOECGChartView.h"
 
-@interface ECGReportViewController ()
+@interface ECGReportViewController ()<UIScrollViewDelegate>
 
+@property (nonatomic) YOECGChartView *ecg ;
+@property (assign, nonatomic) float picWidth;  //图片的宽度
+@property (assign, nonatomic) float picHeight; //图片的高度
 @end
 
 @implementation ECGReportViewController
@@ -26,6 +29,7 @@
     
     YOECGChartView *ecg = [[YOECGChartView alloc]initWithFrame:(CGRectMake(10, 88, [[UIScreen mainScreen] bounds].size.width, 400))];
     ecg.standard.sampleFrequency = 500;
+//    ecg.standard.speed = 25;
     
     float width = dataArr.count * ecg.standard.onePointWidth;
     CGRect frame = ecg.frame;
@@ -47,11 +51,49 @@
     
     [scrollView addSubview:ecg];
     
+    _ecg = ecg;
+    
+    _picWidth = width;
+    _picHeight = 400;
+    scrollView.delegate = self;
+    
     [self.view addSubview:scrollView];
     
 //    self.view.backgroundColor = UIColor.greenColor;
     
 }
+
+
+//返回需要缩放的视图控件 缩放过程中
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return _ecg;
+}
+
+//开始缩放
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view{
+    NSLog(@"开始缩放");
+}
+//结束缩放
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale{
+    NSLog(@"结束缩放");
+}
+
+//缩放中
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView {
+    // 延中心点缩放
+    CGFloat imageScaleWidth = scrollView.zoomScale * _picWidth;
+    CGFloat imageScaleHeight = scrollView.zoomScale * _picHeight;
+    CGFloat imageX = 0;
+    CGFloat imageY = 0;
+    if (imageScaleWidth < self.view.frame.size.width) {
+        imageX = floorf((self.view.frame.size.width - imageScaleWidth) / 2.0);
+    }
+    if (imageScaleHeight < self.view.frame.size.height) {
+        imageY = floorf((self.view.frame.size.height - imageScaleHeight) / 2.0);
+    }
+    _ecg.frame = CGRectMake(imageX, imageY, imageScaleWidth, imageScaleHeight);
+}
+
 
 
 @end

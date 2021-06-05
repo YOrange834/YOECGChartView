@@ -34,7 +34,7 @@
     
     self.negativeNum = 4;
     self.positiveNum = 4;
-    
+        
     self.gridView = [[YOECGBackGroundGridView alloc]initWithFrame:self.bounds];
     [self addSubview:self.gridView];
     self.ecgView = [[YOECGLineView alloc]initWithFrame:self.bounds];
@@ -53,7 +53,7 @@
 
 -(void)reloadView{
     self.gridView.gridTotal = self.negativeNum + self.positiveNum;
-    self.gridView.oneGradeSize = self.standard.oneGridSize;
+    self.gridView.standard = self.standard;
     self.gridView.secodeLineHeight = 2 *self.standard.oneGridSize;
     [self.gridView reloadGrid];
 }

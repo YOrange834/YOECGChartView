@@ -7,15 +7,17 @@
 
 #import <UIKit/UIKit.h>
 #import "YOECGParamter.h"
+#import "YOECGHeader.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YOECGLineView : UIView
 
 @property (nonatomic) YOECGParamter *standard;
 
-/*
- 查阅大量资料，心电图一般是7大格子 上面4个走正电压 下面3个走负电压
- */
+/// 输入数据的电压单位 默认 uV 微伏
+@property (assign, nonatomic) YOECGChartViewVoltageUnit voltageUnit;
+
 
 /// 正电压大格子个数 默认4格
 @property (nonatomic) int positiveNum;
@@ -23,11 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 负电压的大格子个数 默认3格
 @property (nonatomic) int negativeNum;
 
-/// 一大格的尺寸(正方形尺寸一样)
-//@property (nonatomic) float oneGridSize;
+
+-(void)drawStaticECGLine:(NSArray *)voltageArr;
 
 
--(void)drawECGLine:(NSArray *)voltageArr;
 
 
 
