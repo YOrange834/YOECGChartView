@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040B7742266B74B1000E65F3 /* RealTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040B7740266B74B1000E65F3 /* RealTimeViewController.m */; };
+		040B7743266B74B1000E65F3 /* RealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B7741266B74B1000E65F3 /* RealTimeViewController.xib */; };
 		047264BB2669CBCE00F5D3F8 /* YOECGChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264BA2669CBCE00F5D3F8 /* YOECGChartView.m */; };
 		047264BF2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264BE2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m */; };
 		047264C42669FA3F00F5D3F8 /* YOECGLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264C32669FA3F00F5D3F8 /* YOECGLineView.m */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040B773F266B74B1000E65F3 /* RealTimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealTimeViewController.h; sourceTree = "<group>"; };
+		040B7740266B74B1000E65F3 /* RealTimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealTimeViewController.m; sourceTree = "<group>"; };
+		040B7741266B74B1000E65F3 /* RealTimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RealTimeViewController.xib; sourceTree = "<group>"; };
 		047264B92669CBCE00F5D3F8 /* YOECGChartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOECGChartView.h; sourceTree = "<group>"; };
 		047264BA2669CBCE00F5D3F8 /* YOECGChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOECGChartView.m; sourceTree = "<group>"; };
 		047264BD2669D3FB00F5D3F8 /* YOECGBackGroundGridView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOECGBackGroundGridView.h; sourceTree = "<group>"; };
@@ -64,6 +69,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040B773E266B7497000E65F3 /* RealTime */ = {
+			isa = PBXGroup;
+			children = (
+				040B773F266B74B1000E65F3 /* RealTimeViewController.h */,
+				040B7740266B74B1000E65F3 /* RealTimeViewController.m */,
+				040B7741266B74B1000E65F3 /* RealTimeViewController.xib */,
+			);
+			path = RealTime;
+			sourceTree = "<group>";
+		};
 		047264B82669CB9800F5D3F8 /* source */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +113,7 @@
 		047264C5266A054600F5D3F8 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				040B773E266B7497000E65F3 /* RealTime */,
 				047264C6266A055100F5D3F8 /* Report */,
 			);
 			path = Demo;
@@ -220,6 +236,7 @@
 				0E5FB235266919EF007CF6D8 /* Assets.xcassets in Resources */,
 				047264CD266A066A00F5D3F8 /* Test.plist in Resources */,
 				047264CB266A056A00F5D3F8 /* ECGReportViewController.xib in Resources */,
+				040B7743266B74B1000E65F3 /* RealTimeViewController.xib in Resources */,
 				047264CF266A069C00F5D3F8 /* ViewController.xib in Resources */,
 				0E5FB233266919ED007CF6D8 /* Main.storyboard in Resources */,
 			);
@@ -237,6 +254,7 @@
 				047264D3266A0DF700F5D3F8 /* YOECGParamter.m in Sources */,
 				0E5FB22A266919ED007CF6D8 /* AppDelegate.m in Sources */,
 				0E5FB23B266919EF007CF6D8 /* main.m in Sources */,
+				040B7742266B74B1000E65F3 /* RealTimeViewController.m in Sources */,
 				047264BF2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m in Sources */,
 				047264C42669FA3F00F5D3F8 /* YOECGLineView.m in Sources */,
 				047264CA266A056A00F5D3F8 /* ECGReportViewController.m in Sources */,

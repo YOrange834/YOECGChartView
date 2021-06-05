@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "ECGReportViewController.h"
+#import "RealTimeViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HealthChartView";
-    _arr = @[@"心电图报告"];
+    _arr = @[@"心电图报告",@"实时心电图"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -41,8 +42,13 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *title = _arr[indexPath.row];
+    //
     if ([title isEqualToString:@"心电图报告"]) {
         [self.navigationController pushViewController:[ECGReportViewController new] animated:YES];
+        return;
+    }
+    if ([title isEqualToString:@"实时心电图"]) {
+        [self.navigationController pushViewController:[RealTimeViewController new] animated:YES];
         return;
     }
 }

@@ -51,24 +51,47 @@
     self.ecgView.frame = self.bounds;
 }
 
--(void)reloadView{
+
+-(void)drawStaticECGLine:(NSArray *)voltageArr{
     self.gridView.gridTotal = self.negativeNum + self.positiveNum;
     self.gridView.standard = self.standard;
     self.gridView.secodeLineHeight = 2 *self.standard.oneGridSize;
     [self.gridView reloadGrid];
-}
-
-
--(void)drawLine:(NSArray *)voltageArr{
+    
     self.ecgView.positiveNum = self.positiveNum;
     self.ecgView.negativeNum = self.negativeNum;
-    self.ecgView.standard.oneGridSize = self.standard.oneGridSize;
-    [self.ecgView drawECGLine:voltageArr];
+    self.ecgView.standard = self.standard;
+    [self.ecgView drawStaticECGLine:voltageArr];
 }
 
 
--(void)showECGReport{
+/// 实时心电图【双轨迹】
+-(void)drawRealTimeECGLine:(NSArray *)voltageArr{
+    [self drawRealTimeECGLine:voltageArr twoLine:YES];
+}
+
+/// 实时心电图【YES 双轨迹 ,NO 单轨迹】
+-(void)drawRealTimeECGLine:(NSArray *)voltageArr twoLine:(BOOL)twoLine{
+
+    self.ecgView.positiveNum = self.positiveNum;
+    self.ecgView.negativeNum = self.negativeNum;
+    self.ecgView.standard = self.standard;
     
+    if (twoLine) {
+        [self.ecgView drawRealTimeECGTWoLine:voltageArr];
+        return;
+    }
+    
+    [self.ecgView drawRealTimeECGOneLine:voltageArr];
+    
+}
+
+
+-(void)reloadGridView{
+    self.gridView.gridTotal = self.negativeNum + self.positiveNum;
+    self.gridView.standard = self.standard;
+    self.gridView.secodeLineHeight = 0;
+    [self.gridView reloadGrid];
 }
 
 

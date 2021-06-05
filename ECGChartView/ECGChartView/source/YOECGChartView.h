@@ -14,18 +14,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface YOECGChartView : UIView
 
-
+/// 心电图相关参数
 @property (nonatomic) YOECGParamter *standard;
 
+/// 网格视图
 @property (strong, nonatomic) YOECGBackGroundGridView *gridView;
 
+/// 心电图视图
 @property (strong, nonatomic) YOECGLineView *ecgView;
 
-
-
-/*
- 查阅大量资料，心电图一般是7大格子 上面4个走正电压 下面3个走负电压
- */
 
 /// 0点位以上的大格子个数 默认4格
 @property (nonatomic) int positiveNum;
@@ -34,10 +31,17 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int negativeNum;
 
 
+-(void)drawStaticECGLine:(NSArray *)voltageArr;
 
--(void)reloadView;
 
--(void)drawLine:(NSArray *)voltageArr;
+/// 实时心电图绘制之前，需要reload 网格线条
+-(void)reloadGridView;
+
+/// 实时心电图【双轨迹】
+-(void)drawRealTimeECGLine:(NSArray *)voltageArr;
+
+/// 实时心电图【YES 双轨迹 ,NO 单轨迹】
+-(void)drawRealTimeECGLine:(NSArray *)voltageArr twoLine:(BOOL)twoLine;
 
 
 -(void)refreshSubViewFrame;

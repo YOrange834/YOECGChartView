@@ -46,8 +46,7 @@
     
 //    ecg.oneGradeSize = 257 / 14.0 / 5
     
-    [ecg reloadView];
-    [ecg drawLine:dataArr];
+    [ecg drawStaticECGLine:dataArr];
     
     [scrollView addSubview:ecg];
     

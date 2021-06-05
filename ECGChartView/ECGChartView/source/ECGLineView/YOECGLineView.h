@@ -29,8 +29,14 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)drawStaticECGLine:(NSArray *)voltageArr;
 
 
+/// 实时心电图【双轨迹】
+-(void)drawRealTimeECGTWoLine:(NSArray *)voltageArr;
+
+/// 实时心电图 【单条轨迹】
+-(void)drawRealTimeECGOneLine:(NSArray *)voltageArr;
 
 
+-(void)clearData;
 
 @end
 
