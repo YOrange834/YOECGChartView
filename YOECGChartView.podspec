@@ -27,7 +27,7 @@ Pod::Spec.new do |spec|
   spec.description  = <<-DESC
                    DESC
 
-  spec.homepage     = "https://github.com/YOrange834/YOECGChartView"
+  spec.homepage     = "https://github.com/YOrange834"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -90,7 +90,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "ECG/ECGChartView/ECGChartView/source/*"#"Classes", "Classes/**/*.{h,m}"
+  spec.source_files  = "ECGChartView/ECGChartView/source/*"#"Classes", "Classes/**/*.{h,m}"
   spec.exclude_files = ""
 
   # spec.public_header_files = "Classes/**/*.h"
