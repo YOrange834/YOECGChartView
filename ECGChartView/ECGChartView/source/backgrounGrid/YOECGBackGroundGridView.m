@@ -44,8 +44,8 @@
     if (_bigGridLayer) {
         [_bigGridLayer removeFromSuperlayer];
     }
-    for (UILabel *lab in self.textArr) {
-        [lab removeFromSuperview];
+    for (CATextLayer *lab in self.textArr) {
+        [lab removeFromSuperlayer];
     }
     [self.textArr removeAllObjects];
     
@@ -86,9 +86,10 @@
             [bigline moveToPoint:CGPointMake(startX + size * i , 0)];
             [bigline addLineToPoint:CGPointMake(startX + size * i, height + self.secodeLineHeight)];
             if (self.isShowSecondText &&  i < column * 5) {
-                UILabel *lab = [[UILabel alloc]initWithFrame:(CGRectMake(startX + size * i, height, startX + size * self.standard.speed , self.secodeLineHeight))];
-                lab.text = [NSString stringWithFormat:@"%d",self.startSecond + i / self.standard.speed];
-                [self configSecondText:lab];
+                CATextLayer *lab = [CATextLayer layer];
+                lab.frame = CGRectMake(startX + size * i, height + (self.secodeLineHeight - 12) / 2, startX + size * self.standard.speed , self.secodeLineHeight);
+                lab.string = [NSString stringWithFormat:@"%ds",self.startSecond + i / self.standard.speed];
+                [self configSecondLayerText:lab];
             }
         }else{
             UIBezierPath *nowPath = i % 5 == 0 ? bigline : smallline;
@@ -130,13 +131,16 @@
 }
 
 
-
--(void)configSecondText:(UILabel *)label{
-    label.textColor = self.bigGridColor;
-    label.font = [UIFont systemFontOfSize:12];
-    [self addSubview:label];
+-(void)configSecondLayerText:(CATextLayer *)label{
+    label.wrapped = YES;
+    label.foregroundColor = self.bigGridColor.CGColor;
+    label.font = (__bridge CFTypeRef _Nullable)([UIFont systemFontOfSize:30].fontName);
+    label.fontSize = 16;
+    label.contentsScale = [UIScreen mainScreen].scale;
+    [self.layer addSublayer:label];
     [self.textArr addObject:label];
 }
+
 
 
 @end

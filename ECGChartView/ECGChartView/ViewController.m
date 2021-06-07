@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"HealthChartView";
-    _arr = @[@"心电图报告",@"实时心电图"];
+    _arr = @[@"心电图报告",@"实时心电图-单条轨迹",@"实时心电图-双轨迹"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -42,13 +42,23 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *title = _arr[indexPath.row];
-    //
+    //    _arr = @[@"心电图报告",@"实时心电图-单条轨迹",@"实时心电图-双轨迹"];
+
     if ([title isEqualToString:@"心电图报告"]) {
         [self.navigationController pushViewController:[ECGReportViewController new] animated:YES];
         return;
     }
-    if ([title isEqualToString:@"实时心电图"]) {
-        [self.navigationController pushViewController:[RealTimeViewController new] animated:YES];
+    if ([title isEqualToString:@"实时心电图-单条轨迹"]) {
+        RealTimeViewController *real = [RealTimeViewController new];
+        real.isOnly = NO;
+        [self.navigationController pushViewController:real animated:YES];
+        return;
+    }
+    
+    if ([title isEqualToString:@"实时心电图-双轨迹"]) {
+        RealTimeViewController *real = [RealTimeViewController new];
+        real.isOnly = YES;
+        [self.navigationController pushViewController:real animated:YES];
         return;
     }
 }

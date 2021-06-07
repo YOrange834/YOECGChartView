@@ -51,14 +51,14 @@
         [self.timer invalidate];
         self.timer = nil;
     }
-    _timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(refreshMap) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(refreshMap) userInfo:nil repeats:YES];
     
 }
 
 /// 模拟硬件实时数据
 -(void)refreshMap{
     
-    int point = _par.sampleFrequency / 10; //0.1s的采样点数
+    int point = _par.sampleFrequency / (1 / 0.05); //0.05s的采样点数
     
     if (self.dataArr.count / point > _number) {
         NSMutableArray *arr = [NSMutableArray array];
@@ -66,7 +66,7 @@
             NSString *str = self.dataArr[_number * point + i];
             [arr addObject:str];
         }
-        [_ecg drawRealTimeECGLine:arr];
+        [_ecg drawRealTimeECGLine:arr twoLine:_isOnly];
         _number ++;
         
     }else{

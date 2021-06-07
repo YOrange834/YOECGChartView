@@ -47,8 +47,13 @@
 
 
 -(void)refreshSubViewFrame{
-    self.gridView.frame = self.bounds;
-    self.ecgView.frame = self.bounds;
+    /// 计算出总的列数
+    int column = self.bounds.size.width / self.standard.oneGridSize;
+    /// 网格的宽度
+    float width = column * self.standard.oneGridSize;
+    
+    self.gridView.frame = CGRectMake(0, 0, width, self.bounds.size.height);
+    self.ecgView.frame = CGRectMake(0, 0, width, self.bounds.size.height);
 }
 
 

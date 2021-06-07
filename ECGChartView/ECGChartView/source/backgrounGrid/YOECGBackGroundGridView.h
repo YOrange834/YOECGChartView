@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int startSecond;
 
 /// 秒数的UILabel
-@property (nonatomic) NSMutableArray <UILabel *>*textArr;
+@property (nonatomic) NSMutableArray <CATextLayer *>*textArr;
 
 -(void)reloadGrid;
 

@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RealTimeViewController : UIViewController
 
+@property (nonatomic) BOOL isOnly;
+
 @end
 
 NS_ASSUME_NONNULL_END
