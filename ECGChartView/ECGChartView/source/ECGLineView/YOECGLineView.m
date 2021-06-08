@@ -161,13 +161,16 @@
     for (int i = 0; i < voltageArr.count; i++) {
         if (_beforePoint.x >= self.frame.size.width) {
             _linePath = [UIBezierPath bezierPath];
-            _beforePoint = CGPointMake(0 ,  centerY - [voltageArr[i] floatValue] / voltageRate * oneVHeight);
+            _beforePoint.x = 0;
             [_linePath moveToPoint:_beforePoint];
-            continue;
+            _beforePoint = CGPointMake(xWidth ,  centerY - [voltageArr[i] floatValue] / voltageRate * oneVHeight);
+            [_linePath addLineToPoint:_beforePoint];
+        }else{
+            CGPoint point = CGPointMake(_beforePoint.x + xWidth , centerY - [voltageArr[i] floatValue] / voltageRate * oneVHeight);
+            [_linePath addLineToPoint:point];
+            _beforePoint = point;
         }
-        CGPoint point = CGPointMake(_beforePoint.x + xWidth , centerY - [voltageArr[i] floatValue] / voltageRate * oneVHeight);
-        [_linePath addLineToPoint:point];
-        _beforePoint = point;
+        NSLog(@"%@",NSStringFromCGPoint(_beforePoint));
         
     }
     _lineLayer.path = _linePath.CGPath;

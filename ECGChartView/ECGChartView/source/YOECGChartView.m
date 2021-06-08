@@ -77,7 +77,8 @@
 
 /// 实时心电图【YES 双轨迹 ,NO 单轨迹】
 -(void)drawRealTimeECGLine:(NSArray *)voltageArr twoLine:(BOOL)twoLine{
-
+    [self refreshSubViewFrame];
+    
     self.ecgView.positiveNum = self.positiveNum;
     self.ecgView.negativeNum = self.negativeNum;
     self.ecgView.standard = self.standard;

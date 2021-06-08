@@ -28,7 +28,7 @@
     //当数据结构为数组时
     _dataArr = [[NSArray alloc] initWithContentsOfFile:plistPath];
     
-    YOECGChartView *ecg = [[YOECGChartView alloc]initWithFrame:(CGRectMake(10, 88, [[UIScreen mainScreen] bounds].size.width, 400))];
+    YOECGChartView *ecg = [[YOECGChartView alloc]initWithFrame:(CGRectMake(10, 88, [[UIScreen mainScreen] bounds].size.width - 20, 400))];
     ecg.standard.sampleFrequency = 500;
 
     _par = ecg.standard;

@@ -53,7 +53,7 @@
     UIBezierPath *bigline = [UIBezierPath bezierPath];
 
     /// 计算出总的列数
-    int column = self.bounds.size.width / self.standard.oneGridSize;
+    int column = roundf(self.bounds.size.width / self.standard.oneGridSize);
     
     ///网格的高度
     float height = self.gridTotal * self.standard.oneGridSize;
