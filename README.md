@@ -12,7 +12,7 @@
 
 ### show
 
-![IMG_2233](https://github.com/YOrange834/YOECGChartView/blob/main/res/IMG_2233.png)
+![IMG_2233](https://github.com/YOrange834/YOECGChartView/blob/main/res/IMG_2233%E5%89%AF%E6%9C%AC.png)
 
 
 
