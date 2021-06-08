@@ -64,7 +64,7 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  spec.platform     = :ios
+  # spec.platform     = :ios
   spec.platform     = :ios, "9.0"
 
   #  When using multiple platforms
@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "ECGChartView/ECGChartView/source/*"#"Classes", "Classes/**/*.{h,m}"
+  spec.source_files  = "ECGChartView/ECGChartView/source/**/*.{h,m}"#"Classes", "Classes/**/*.{h,m}"
   spec.exclude_files = ""
 
   # spec.public_header_files = "Classes/**/*.h"
