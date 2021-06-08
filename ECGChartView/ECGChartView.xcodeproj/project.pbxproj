@@ -17,6 +17,7 @@
 		047264CD266A066A00F5D3F8 /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047264CC266A066A00F5D3F8 /* Test.plist */; };
 		047264CF266A069C00F5D3F8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047264CE266A069C00F5D3F8 /* ViewController.xib */; };
 		047264D3266A0DF700F5D3F8 /* YOECGParamter.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264D2266A0DF700F5D3F8 /* YOECGParamter.m */; };
+		04BFD62B266F6A87008E968C /* YOTimeTextParmaramter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD62A266F6A87008E968C /* YOTimeTextParmaramter.m */; };
 		0E5FB22A266919ED007CF6D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB229266919ED007CF6D8 /* AppDelegate.m */; };
 		0E5FB22D266919ED007CF6D8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB22C266919ED007CF6D8 /* SceneDelegate.m */; };
 		0E5FB230266919ED007CF6D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB22F266919ED007CF6D8 /* ViewController.m */; };
@@ -44,6 +45,8 @@
 		047264CE266A069C00F5D3F8 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		047264D1266A0DF700F5D3F8 /* YOECGParamter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOECGParamter.h; sourceTree = "<group>"; };
 		047264D2266A0DF700F5D3F8 /* YOECGParamter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOECGParamter.m; sourceTree = "<group>"; };
+		04BFD629266F6A87008E968C /* YOTimeTextParmaramter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOTimeTextParmaramter.h; sourceTree = "<group>"; };
+		04BFD62A266F6A87008E968C /* YOTimeTextParmaramter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOTimeTextParmaramter.m; sourceTree = "<group>"; };
 		0E5FB225266919ED007CF6D8 /* ECGChartView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECGChartView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5FB228266919ED007CF6D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E5FB229266919ED007CF6D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 			children = (
 				047264BD2669D3FB00F5D3F8 /* YOECGBackGroundGridView.h */,
 				047264BE2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m */,
+				04BFD629266F6A87008E968C /* YOTimeTextParmaramter.h */,
+				04BFD62A266F6A87008E968C /* YOTimeTextParmaramter.m */,
 			);
 			path = backgrounGrid;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				047264BF2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m in Sources */,
 				047264C42669FA3F00F5D3F8 /* YOECGLineView.m in Sources */,
 				047264CA266A056A00F5D3F8 /* ECGReportViewController.m in Sources */,
+				04BFD62B266F6A87008E968C /* YOTimeTextParmaramter.m in Sources */,
 				0E5FB22D266919ED007CF6D8 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,7 +32,8 @@
     self.smallGridColor = [UIColor colorWithRed:0xEE / 255.0 green:0xEE / 255.0 blue:0xEE / 255.0 alpha:1.0];
     self.secodeLineHeight = 0;
     self.startSecond = 0;
-    self.textArr = [NSMutableArray array];    
+    self.textArr = [NSMutableArray array];
+    self.textPar = [[YOTimeTextParmaramter alloc]init];
 }
 
 
@@ -132,11 +133,12 @@
 
 
 -(void)configSecondLayerText:(CATextLayer *)label{
-    label.wrapped = YES;
-    label.foregroundColor = self.bigGridColor.CGColor;
-    label.font = (__bridge CFTypeRef _Nullable)([UIFont systemFontOfSize:30].fontName);
-    label.fontSize = 16;
+    label.wrapped = self.textPar.isWrapped;
+    label.foregroundColor = self.textPar.textColor.CGColor;
+    label.font = (__bridge CFTypeRef _Nullable)self.textPar.fontName;
+    label.fontSize = self.textPar.fontSize;
     label.contentsScale = [UIScreen mainScreen].scale;
+    if (self.textPar.backgroundColor) label.backgroundColor = self.textPar.backgroundColor.CGColor;
     [self.layer addSublayer:label];
     [self.textArr addObject:label];
 }
