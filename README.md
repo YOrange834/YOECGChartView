@@ -12,7 +12,7 @@
 
 ### show
 
-![IMG_2233](/Users/mac/Desktop/ECG/ECG/res/IMG_2233.png)
+![IMG_2233](https://github.com/YOrange834/YOECGChartView/blob/main/res/IMG_2233.png)
 
 
 
