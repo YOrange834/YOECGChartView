@@ -16,6 +16,12 @@
 
 
 
+### Swift
+
+> (>=0.0.3)添加Swift的使用样例
+
+
+
 ### Other Function 
 
 You can click  https://github.com/YOrange834/HealthChartView
