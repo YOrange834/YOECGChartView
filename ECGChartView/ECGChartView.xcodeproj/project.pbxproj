@@ -17,6 +17,7 @@
 		047264CD266A066A00F5D3F8 /* Test.plist in Resources */ = {isa = PBXBuildFile; fileRef = 047264CC266A066A00F5D3F8 /* Test.plist */; };
 		047264CF266A069C00F5D3F8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047264CE266A069C00F5D3F8 /* ViewController.xib */; };
 		047264D3266A0DF700F5D3F8 /* YOECGParamter.m in Sources */ = {isa = PBXBuildFile; fileRef = 047264D2266A0DF700F5D3F8 /* YOECGParamter.m */; };
+		04BFD62B266F6A87008E968C /* YOTimeTextParmaramter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD62A266F6A87008E968C /* YOTimeTextParmaramter.m */; };
 		0E5FB22A266919ED007CF6D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB229266919ED007CF6D8 /* AppDelegate.m */; };
 		0E5FB22D266919ED007CF6D8 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB22C266919ED007CF6D8 /* SceneDelegate.m */; };
 		0E5FB230266919ED007CF6D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB22F266919ED007CF6D8 /* ViewController.m */; };
@@ -24,6 +25,8 @@
 		0E5FB235266919EF007CF6D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5FB234266919EF007CF6D8 /* Assets.xcassets */; };
 		0E5FB238266919EF007CF6D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E5FB236266919EF007CF6D8 /* LaunchScreen.storyboard */; };
 		0E5FB23B266919EF007CF6D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5FB23A266919EF007CF6D8 /* main.m */; };
+		0E8DB20926837DC400B32925 /* SRealTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8DB20726837DC400B32925 /* SRealTimeViewController.swift */; };
+		0E8DB20A26837DC400B32925 /* SRealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E8DB20826837DC400B32925 /* SRealTimeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,8 @@
 		047264CE266A069C00F5D3F8 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		047264D1266A0DF700F5D3F8 /* YOECGParamter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOECGParamter.h; sourceTree = "<group>"; };
 		047264D2266A0DF700F5D3F8 /* YOECGParamter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOECGParamter.m; sourceTree = "<group>"; };
+		04BFD629266F6A87008E968C /* YOTimeTextParmaramter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOTimeTextParmaramter.h; sourceTree = "<group>"; };
+		04BFD62A266F6A87008E968C /* YOTimeTextParmaramter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOTimeTextParmaramter.m; sourceTree = "<group>"; };
 		0E5FB225266919ED007CF6D8 /* ECGChartView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECGChartView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5FB228266919ED007CF6D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E5FB229266919ED007CF6D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +61,9 @@
 		0E5FB237266919EF007CF6D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E5FB239266919EF007CF6D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E5FB23A266919EF007CF6D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0E8DB20626837DC400B32925 /* ECGChartView-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ECGChartView-Bridging-Header.h"; sourceTree = "<group>"; };
+		0E8DB20726837DC400B32925 /* SRealTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRealTimeViewController.swift; sourceTree = "<group>"; };
+		0E8DB20826837DC400B32925 /* SRealTimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SRealTimeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,8 @@
 			children = (
 				047264BD2669D3FB00F5D3F8 /* YOECGBackGroundGridView.h */,
 				047264BE2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m */,
+				04BFD629266F6A87008E968C /* YOTimeTextParmaramter.h */,
+				04BFD62A266F6A87008E968C /* YOTimeTextParmaramter.m */,
 			);
 			path = backgrounGrid;
 			sourceTree = "<group>";
@@ -158,6 +168,7 @@
 		0E5FB227266919ED007CF6D8 /* ECGChartView */ = {
 			isa = PBXGroup;
 			children = (
+				0E8DB20526837D8900B32925 /* swiftDemo */,
 				047264C5266A054600F5D3F8 /* Demo */,
 				047264B82669CB9800F5D3F8 /* source */,
 				0E5FB228266919ED007CF6D8 /* AppDelegate.h */,
@@ -174,6 +185,16 @@
 				0E5FB23A266919EF007CF6D8 /* main.m */,
 			);
 			path = ECGChartView;
+			sourceTree = "<group>";
+		};
+		0E8DB20526837D8900B32925 /* swiftDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0E8DB20726837DC400B32925 /* SRealTimeViewController.swift */,
+				0E8DB20826837DC400B32925 /* SRealTimeViewController.xib */,
+				0E8DB20626837DC400B32925 /* ECGChartView-Bridging-Header.h */,
+			);
+			path = swiftDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +227,7 @@
 				TargetAttributes = {
 					0E5FB224266919ED007CF6D8 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -233,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E5FB238266919EF007CF6D8 /* LaunchScreen.storyboard in Resources */,
+				0E8DB20A26837DC400B32925 /* SRealTimeViewController.xib in Resources */,
 				0E5FB235266919EF007CF6D8 /* Assets.xcassets in Resources */,
 				047264CD266A066A00F5D3F8 /* Test.plist in Resources */,
 				047264CB266A056A00F5D3F8 /* ECGReportViewController.xib in Resources */,
@@ -258,6 +281,8 @@
 				047264BF2669D3FB00F5D3F8 /* YOECGBackGroundGridView.m in Sources */,
 				047264C42669FA3F00F5D3F8 /* YOECGLineView.m in Sources */,
 				047264CA266A056A00F5D3F8 /* ECGReportViewController.m in Sources */,
+				0E8DB20926837DC400B32925 /* SRealTimeViewController.swift in Sources */,
+				04BFD62B266F6A87008E968C /* YOTimeTextParmaramter.m in Sources */,
 				0E5FB22D266919ED007CF6D8 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D63XASFCZU;
 				INFOPLIST_FILE = ECGChartView/Info.plist;
@@ -411,6 +437,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tgcompany.ECGChartView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ECGChartView/swiftDemo/ECGChartView-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -420,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D63XASFCZU;
 				INFOPLIST_FILE = ECGChartView/Info.plist;
@@ -430,6 +460,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tgcompany.ECGChartView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ECGChartView/swiftDemo/ECGChartView-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -22,7 +22,12 @@
     
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Test" ofType:@"plist"];
     //当数据结构为数组时
-    NSArray *dataArr = [[NSArray alloc] initWithContentsOfFile:plistPath];
+    NSArray *data = [[NSArray alloc] initWithContentsOfFile:plistPath];
+    NSMutableArray *dataArr = [NSMutableArray arrayWithArray:data];
+//    for (int i = 0; i < dataArr.count; i++) {
+//        NSNumber *str = dataArr[i];
+//        dataArr[i] = @(-str.intValue);
+//    }
     
     UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:(CGRectMake(0, 88, [[UIScreen mainScreen] bounds].size.width, 400))];
     
@@ -30,6 +35,8 @@
     YOECGChartView *ecg = [[YOECGChartView alloc]initWithFrame:(CGRectMake(10, 88, [[UIScreen mainScreen] bounds].size.width, 400))];
     ecg.standard.sampleFrequency = 500;
 //    ecg.standard.speed = 25;
+    
+    ecg.ecgView.clipsToBounds = YES;
     
     float width = dataArr.count * ecg.standard.onePointWidth;
     CGRect frame = ecg.frame;

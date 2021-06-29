@@ -36,11 +36,11 @@
     self.positiveNum = 4;
         
     self.gridView = [[YOECGBackGroundGridView alloc]initWithFrame:self.bounds];
+    self.gridView.standard = self.standard;
     [self addSubview:self.gridView];
-    self.ecgView = [[YOECGLineView alloc]initWithFrame:self.bounds];
     
+    self.ecgView = [[YOECGLineView alloc]initWithFrame:self.bounds];
     self.ecgView.standard = self.standard;
-    self.ecgView.standard.oneGridSize = self.standard.oneGridSize;
     [self addSubview:self.ecgView];
     
 }
@@ -52,12 +52,20 @@
     /// 网格的宽度
     float width = column * self.standard.oneGridSize;
     
+    float ecgHeight = (self.negativeNum + self.positiveNum )  * self.standard.oneGridSize;
+    
+    if (self.bounds.size.height > ecgHeight) {
+        self.ecgView.frame = CGRectMake(0, 0, width, ecgHeight);
+    }else{
+        self.ecgView.frame = CGRectMake(0, 0, width, self.bounds.size.height);
+    }
     self.gridView.frame = CGRectMake(0, 0, width, self.bounds.size.height);
-    self.ecgView.frame = CGRectMake(0, 0, width, self.bounds.size.height);
 }
 
 
 -(void)drawStaticECGLine:(NSArray *)voltageArr{
+    [self refreshSubViewFrame];
+
     self.gridView.gridTotal = self.negativeNum + self.positiveNum;
     self.gridView.standard = self.standard;
     self.gridView.secodeLineHeight = 2 *self.standard.oneGridSize;
