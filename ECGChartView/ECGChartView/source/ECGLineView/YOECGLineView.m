@@ -33,6 +33,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        self.clipsToBounds = YES;
         self.backgroundColor = [UIColor clearColor];
         self.voltageUnit = YOECGChartViewVoltageUnitMicroVolt;
     }
