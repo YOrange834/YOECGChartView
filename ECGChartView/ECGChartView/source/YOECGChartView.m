@@ -7,7 +7,6 @@
 
 #import "YOECGChartView.h"
 
-
 @interface YOECGChartView()
 
 /// 走纸速速 默认25mm/s (0.025s)
@@ -15,6 +14,10 @@
 
 /// 纸张规格 10 mV/mm (一小格 10mV)
 @property (nonatomic) int voltageSpecifications;
+
+@property (nonatomic) YOECGChartViewType drawECGType;
+
+@property (nonatomic) NSArray *voltageArr;
 
 @end
 
@@ -64,11 +67,17 @@
 
 
 -(void)drawStaticECGLine:(NSArray *)voltageArr{
+    if(![self.standard parameterIsRight]){
+        NSAssert(NO, @"参数有问题");
+    }
+    _drawECGType = YOECGChartViewStatic;
+    _voltageArr = voltageArr;
+    
     [self refreshSubViewFrame];
 
     self.gridView.gridTotal = self.negativeNum + self.positiveNum;
     self.gridView.standard = self.standard;
-    self.gridView.secodeLineHeight = 2 *self.standard.oneGridSize;
+    self.gridView.secodeLineHeight = 2 * self.standard.oneGridSize;
     [self.gridView reloadGrid];
     
     self.ecgView.positiveNum = self.positiveNum;
@@ -85,6 +94,9 @@
 
 /// 实时心电图【YES 双轨迹 ,NO 单轨迹】
 -(void)drawRealTimeECGLine:(NSArray *)voltageArr twoLine:(BOOL)twoLine{
+    if(![self.standard parameterIsRight]){
+        NSAssert(NO, @"参数有问题");
+    }
     [self refreshSubViewFrame];
     
     self.ecgView.positiveNum = self.positiveNum;
@@ -92,12 +104,12 @@
     self.ecgView.standard = self.standard;
     
     if (twoLine) {
+        _drawECGType = YOECGChartViewRealTimeTwoLine;
         [self.ecgView drawRealTimeECGTWoLine:voltageArr];
         return;
     }
-    
+    _drawECGType = YOECGChartViewRealTimeOneLine;
     [self.ecgView drawRealTimeECGOneLine:voltageArr];
-    
 }
 
 
@@ -108,5 +120,15 @@
     [self.gridView reloadGrid];
 }
 
+
+-(void)reload{
+    [self.gridView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    [self.ecgView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+
+    if (self.drawECGType == YOECGChartViewStatic) {
+        [self drawStaticECGLine:self.voltageArr];
+    }
+}
 
 @end

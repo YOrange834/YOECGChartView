@@ -13,6 +13,11 @@
 @property (nonatomic) YOECGChartView *ecg ;
 @property (assign, nonatomic) float picWidth;  //图片的宽度
 @property (assign, nonatomic) float picHeight; //图片的高度
+
+@property (weak, nonatomic) IBOutlet UILabel *showVoltageUnitLab;
+
+
+
 @end
 
 @implementation ECGReportViewController
@@ -29,7 +34,7 @@
 //        dataArr[i] = @(-str.intValue);
 //    }
     
-    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:(CGRectMake(0, 88, [[UIScreen mainScreen] bounds].size.width, 400))];
+    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:(CGRectMake(0, 50, [[UIScreen mainScreen] bounds].size.width, 400))];
     
     
     YOECGChartView *ecg = [[YOECGChartView alloc]initWithFrame:(CGRectMake(10, 88, [[UIScreen mainScreen] bounds].size.width, 400))];
@@ -71,8 +76,24 @@
 
 
 - (IBAction)changeVoltageSpecifications:(UISegmentedControl *)sender {
-    
+    _ecg.standard.speed = 10 + (int)sender.selectedSegmentIndex * 5;
+    [_ecg reload];
 }
+
+- (IBAction)sampleFrequencyValueChange:(UISlider *)sender {
+    _ecg.standard.sampleFrequency = (int)(250 + sender.value * 250);
+    self.showVoltageUnitLab.text = [NSString stringWithFormat:@"%dHZ",_ecg.standard.sampleFrequency];
+    [_ecg reload];
+}
+
+
+
+- (IBAction)voltageUnitValueChange:(UISegmentedControl *)sender {
+    _ecg.standard.voltageUnit = sender.selectedSegmentIndex;
+    [_ecg reload];
+}
+
+
 
 
 //返回需要缩放的视图控件 缩放过程中

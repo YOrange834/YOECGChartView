@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YOECGHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,7 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 一大格的尺寸(正方形尺寸一样)
 @property (nonatomic) float oneGridSize;
 
-///
+/// 输入数据的电压单位 默认 uV 微伏
+@property (assign, nonatomic) YOECGChartViewVoltageUnit voltageUnit;
+
+/// 每秒的格子数
 @property (nonatomic,readonly) float secodePerWidth;
 
 /// 两个点之间的间隔(通过采样频率和每个格子的尺寸计算得来)
@@ -31,6 +35,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 两个点之间的间隔高度(通过纸张规格和每个格子的尺寸计算得来)
 @property (nonatomic, readonly) float onePointHeight;
+
+/// 判断参数是否正确
+-(BOOL)parameterIsRight;
+
 
 @end
 
