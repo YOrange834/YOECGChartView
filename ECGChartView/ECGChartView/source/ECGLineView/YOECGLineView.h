@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) YOECGParamter *standard;
 
-/// 输入数据的电压单位 默认 uV 微伏
-@property (assign, nonatomic) YOECGChartViewVoltageUnit voltageUnit;
+/// 输入数据的电压单位 默认 uV 微伏 【兼容以前的版本，慎用次字段，以后会去掉】
+@property (assign, nonatomic) YOECGChartViewVoltageUnit voltageUnit DEPRECATED_MSG_ATTRIBUTE("use self.standard.voltageUnit");
 
 
 /// 正电压大格子个数 默认4格

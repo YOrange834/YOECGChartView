@@ -36,3 +36,10 @@ typedef NS_ENUM(NSInteger, YOECGChartViewVoltageUnit) {
     YOECGChartViewVoltageUnitKiloVolt,
     
 };
+
+
+typedef NS_ENUM(NSInteger, YOECGChartViewType) {
+    YOECGChartViewStatic, // default
+    YOECGChartViewRealTimeOneLine,
+    YOECGChartViewRealTimeTwoLine,
+};

@@ -9,6 +9,7 @@
 #import "YOECGParamter.h"
 #import "YOECGLineView.h"
 #import "YOECGBackGroundGridView.h"
+#import "YOECGHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -45,6 +46,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(void)refreshSubViewFrame;
+
+/// 修改配置参数后刷新视图
+-(void)reload;
 
 @end
 

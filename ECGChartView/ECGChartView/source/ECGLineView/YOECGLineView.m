@@ -47,6 +47,8 @@
         return;
     }
     
+    [self.layer.sublayers makeObjectsPerformSelector:@selector(removeFromSuperlayer)];
+    
     /// 1mv的尺寸  一大格 0.5mV
     float oneVHeight = self.standard.onePointHeight; // pt/mV
     /// 中心点的高度 静息状态
@@ -54,8 +56,13 @@
     
     float xWidth = self.standard.onePointWidth;
     
-    /// 目的 将输入的电压转为 mV
+    /// 目的 将输入的电压转为 mV ()
     float voltageRate = 1000 / pow(1000, self.voltageUnit);
+    
+    if(self.voltageUnit == YOECGChartViewVoltageUnitMicroVolt){
+        voltageRate = 1000 / pow(1000, self.standard.voltageUnit);
+    }
+    
     
     UIBezierPath *path = [UIBezierPath bezierPath];
     {
